@@ -1,6 +1,13 @@
 class Bottles
   def verse number
     case number
+    when 0 then
+      <<~EOF
+        No more bottles of beer on the wall
+        No more bottles of beer
+        Go to the store and buy some more
+        99 bottles of beer on the wall
+      EOF
     when 1 then
       <<~EOF
         1 bottle of beer on the wall
