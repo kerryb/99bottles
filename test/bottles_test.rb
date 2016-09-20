@@ -25,5 +25,14 @@ describe Bottles do
         2 bottles of beer
       EOF
     end
+
+    it "outputs the penultimate verse" do
+      @bottles.verse(2).must_equal <<~EOF
+        2 bottles of beer on the wall
+        2 bottles of beer
+        Take one down and pass it around
+        1 bottle of beer
+      EOF
+    end
   end
 end
