@@ -1,18 +1,26 @@
 class Bottles
   def verse number
-    if number == 2
+    case number
+    when 1 then
+      <<~EOF
+        1 bottle of beer on the wall
+        1 bottle of beer
+        Take it down and pass it around
+        No more bottles of beer on the wall
+      EOF
+    when 2 then
       <<~EOF
         2 bottles of beer on the wall
         2 bottles of beer
         Take one down and pass it around
-        1 bottle of beer
+        1 bottle of beer on the wall
       EOF
     else
       <<~EOF
         #{number} bottles of beer on the wall
         #{number} bottles of beer
         Take one down and pass it around
-        #{number - 1} bottles of beer
+        #{number - 1} bottles of beer on the wall
       EOF
     end
   end
