@@ -1,4 +1,8 @@
 class Bottles
+  def verses starting, ending
+    starting.downto(ending).map {|n| verse n}.join "\n"
+  end
+
   def verse number
     case number
     when 0 then
