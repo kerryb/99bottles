@@ -23,20 +23,23 @@ class Bottles
         Take it down and pass it around
         No more bottles of beer on the wall
       EOF
-    when 2 then
-      <<~EOF
-        2 bottles of beer on the wall
-        2 bottles of beer
-        Take one down and pass it around
-        1 bottle of beer on the wall
-      EOF
     else
       <<~EOF
-        #{number} bottles of beer on the wall
-        #{number} bottles of beer
+        #{number} #{container number} of beer on the wall
+        #{number} #{container number} of beer
         Take one down and pass it around
-        #{number - 1} bottles of beer on the wall
+        #{number - 1} #{container(number - 1)} of beer on the wall
       EOF
+    end
+  end
+
+  private
+
+  def container number
+    if number == 1
+      "bottle"
+    else
+      "bottles"
     end
   end
 end
