@@ -8,17 +8,10 @@ class Bottles
   end
 
   def verse number
-    if number.zero?
-      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
-        "#{quantity(number)} #{container(number)} of beer\n" +
-        "#{action(number)}, " +
-        "99 bottles of beer on the wall\n"
-    else
-      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
-        "#{quantity(number)} #{container(number)} of beer\n" +
-        "#{action(number)}, " +
-        "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall\n"
-    end
+    "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
+      "#{quantity(number)} #{container(number)} of beer\n" +
+      "#{action(number)}, " +
+      "#{quantity(successor number)} #{container(successor number)} of beer on the wall\n"
   end
 
   private
@@ -48,10 +41,18 @@ class Bottles
   end
 
   def action number
-    if number == 0
+    if number.zero?
       "Go to the store and buy some more"
     else
       "Take #{pronoun(number)} down and pass it around"
+    end
+  end
+
+  def successor number
+    if number.zero?
+      99
+    else
+      number - 1
     end
   end
 end
