@@ -18,8 +18,8 @@ class Bottles
       EOF
     when 1 then
       <<~EOF
-        1 bottle of beer on the wall
-        1 bottle of beer
+        #{number} #{container number} of beer on the wall
+        #{number} #{container number} of beer
         Take it down and pass it around
         No more bottles of beer on the wall
       EOF
