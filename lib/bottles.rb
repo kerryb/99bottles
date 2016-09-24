@@ -9,15 +9,15 @@ class Bottles
 
   def verse number
     if number.zero?
-      <<~EOF
-        No more bottles of beer on the wall, no more bottles of beer
-        Go to the store and buy some more, 99 bottles of beer on the wall
-      EOF
+      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
+        "#{quantity(number)} #{container(number)} of beer\n" +
+        "Go to the store and buy some more, " +
+        "99 bottles of beer on the wall\n"
     else
-      <<~EOF
-        #{number} #{container number} of beer on the wall, #{number} #{container number} of beer
-        Take #{pronoun number} down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall
-      EOF
+      "#{quantity(number).capitalize} #{container(number)} of beer on the wall, " +
+        "#{quantity(number)} #{container(number)} of beer\n" +
+        "Take #{pronoun(number)} down and pass it around, " +
+        "#{quantity(number - 1)} #{container(number - 1)} of beer on the wall\n"
     end
   end
 
@@ -27,7 +27,7 @@ class Bottles
     if number == 0
       "no more"
     else
-      number
+      number.to_s
     end
   end
 
