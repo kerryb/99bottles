@@ -8,26 +8,28 @@ class Bottles
   end
 
   def verse number
-    case number
-    when 0 then
+    if number.zero?
       <<~EOF
         No more bottles of beer on the wall, no more bottles of beer
         Go to the store and buy some more, 99 bottles of beer on the wall
       EOF
-    when 1 then
-      <<~EOF
-        #{number} #{container number} of beer on the wall, #{number} #{container number} of beer
-        Take #{pronoun number} down and pass it around, no more bottles of beer on the wall
-      EOF
     else
       <<~EOF
         #{number} #{container number} of beer on the wall, #{number} #{container number} of beer
-        Take #{pronoun number} down and pass it around, #{number - 1} #{container(number - 1)} of beer on the wall
+        Take #{pronoun number} down and pass it around, #{quantity(number - 1)} #{container(number - 1)} of beer on the wall
       EOF
     end
   end
 
   private
+
+  def quantity number
+    if number == 0
+      "no more"
+    else
+      number
+    end
+  end
 
   def container number
     if number == 1
