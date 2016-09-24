@@ -20,14 +20,14 @@ class Bottles
       <<~EOF
         #{number} #{container number} of beer on the wall
         #{number} #{container number} of beer
-        Take it down and pass it around
+        Take #{pronoun number} down and pass it around
         No more bottles of beer on the wall
       EOF
     else
       <<~EOF
         #{number} #{container number} of beer on the wall
         #{number} #{container number} of beer
-        Take one down and pass it around
+        Take #{pronoun number} down and pass it around
         #{number - 1} #{container(number - 1)} of beer on the wall
       EOF
     end
@@ -40,6 +40,14 @@ class Bottles
       "bottle"
     else
       "bottles"
+    end
+  end
+
+  def pronoun number
+    if number == 1
+      "it"
+    else
+      "one"
     end
   end
 end
