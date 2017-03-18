@@ -5,6 +5,10 @@ class BottleNumber
     @number = number
   end
 
+  def to_s
+    "#{quantity} #{container}"
+  end
+
   def quantity
     if number.zero?
       "no more"
