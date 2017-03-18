@@ -1,6 +1,14 @@
 class BottleNumber
   attr_reader :number
 
+  def self.for number
+    case number
+    when 0 then BottleNumber0
+    when 1 then BottleNumber1
+    else BottleNumber
+    end.new number
+  end
+
   def initialize number
     @number = number
   end
@@ -26,6 +34,6 @@ class BottleNumber
   end
 
   def successor
-    number - 1
+    BottleNumber.for(number - 1)
   end
 end
