@@ -1,5 +1,3 @@
-require_relative "bottle_number"
-
 class BottleNumber0 < BottleNumber
   def quantity
     "no more"
